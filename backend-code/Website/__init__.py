@@ -1,5 +1,5 @@
 from flask import Flask
-from view import car_prediction_page_blueprint
+from .view import car_prediction_page_blueprint
 
 def create_app():
 
