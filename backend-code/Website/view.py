@@ -22,10 +22,10 @@ def home():
         aim : This function accepts the get and post request . Responsible for sending the records
         and retrieve the specific record . 
         
-        parameter : GET { previous record of all data from dataframe . dtype-json}
-                    POST { output of the Linear regresson model . dtype-json}
+        parameter : 
 
-        return : json data 
+        return : CASE I : GET { previous record of all data from dataframe . dtype-json}
+                 CASE II : POST { output of the Linear regresson model . dtype-json} 
 
     """
 
