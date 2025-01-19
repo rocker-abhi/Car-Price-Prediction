@@ -33,20 +33,20 @@ def home():
         # Block execute when request is of type post .
 
         data = request.get_json()
-
+        print(data)
         name = data['name'] # <-- retrieve name from request 
         company = data['company'] # <-- retrieve company from request 
-        year = data['year'] # <-- retrieve year from request 
+        year = int(data['year']) # <-- retrieve year from request 
         fuel_type = data['fuel_type'] # <-- retrieve fuel_type from request 
-        kms_traveled = data['kms_traveled'] # <-- retrieve kms_driven from request 
+        kms_traveled = int(data['kms_traveled']) # <-- retrieve kms_driven from request 
 
         data = [
             [name, company, year, kms_traveled, fuel_type]
         ] # <-- club all the data for the dataFrame
 
         output = lr_model.predict(pd.DataFrame(data, columns=['name','company','year','kms_driven','fuel_type'])) # Getting Prediction using linear Regression Model
-
-        return jsonify(output) # <-- jsonify the output and return 
+        # print(output)
+        return jsonify({'predicted_price': float(output[0])})
     
     companies = sorted(cars_data['company'].unique().tolist(), reverse=False) # <-- car companies data from dataframe
     name = sorted(cars_data['name'].unique().tolist(), reverse=False) # <-- car name data from dataframe
