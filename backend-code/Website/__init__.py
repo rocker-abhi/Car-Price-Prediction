@@ -7,6 +7,7 @@
 # importing libraries
 from flask import Flask
 from .view import car_prediction_page_blueprint
+from flask_cors import CORS
 
 key = "myNameIsAbhishek" # <-- Secreat Key
 
@@ -23,5 +24,5 @@ def create_app():
     app = Flask(__name__) # <-- Initialise the Flask app 
     app.secret_key = key # <-- bind secreat key with app 
     app.register_blueprint(car_prediction_page_blueprint) # <-- Registing the blue print with flask app
-    
+    CORS(app)
     return app 
