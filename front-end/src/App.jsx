@@ -14,26 +14,30 @@ function App() {
     year: [],
   });
 
+  // State variables for selected company and filtered models
+  const [company_drop_down_val, set_company_drop_down_val] = useState('');
+  const [list_model_name, set_model_list] = useState([]);
+
   // Fetch data when the component mounts
-  useEffect( () => {
-    /*
-      aim: This Function executes before the component is mounted.
-    */
+  useEffect(() => {
     fetch_data();
   }, []);
 
-  useEffect( ()=>{
-    /*
-      aim : This function Track data val every time it has been updated . 
-    */
-    console.log("data val is updated :" , data_val)
-  }, [data_val])
+  // Update the model dropdown options based on the selected company
+  useEffect(() => {
+    if (company_drop_down_val) {
+      // Filter models based on the selected company
+      const filteredModels = data_val.name.filter((model) =>
+        model.includes(company_drop_down_val)
+      );
+      set_model_list(filteredModels);
+    } else {
+      set_model_list([]); // Reset model dropdown if no company is selected
+    }
+  }, [company_drop_down_val]);
 
   // Function to fetch data from the API
   function fetch_data() {
-    /*
-      aim : function responsible for updating the data_val 
-    */
     axios
       .get("http://127.0.0.1:5000/") // Replace with your API endpoint
       .then((response) => {
@@ -52,6 +56,7 @@ function App() {
 
           {/* Grid container */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 items-center">
+            
             {/* Company Dropdown */}
             <label htmlFor="companyDropdown" className="text-white font-bold">
               Select Company
@@ -59,7 +64,9 @@ function App() {
             <select
               id="company_drop_down"
               className="border rounded p-2 w-full sm:col-span-2"
+              onChange={(e) => set_company_drop_down_val(e.target.value)}
             >
+              <option value="">Select a company</option>
               {data_val.company_data.length > 0 ? (
                 data_val.company_data.map((company, index) => (
                   <option key={index} value={company}>
@@ -67,7 +74,7 @@ function App() {
                   </option>
                 ))
               ) : (
-                <option value={""}>No company</option>
+                <option value="">No company</option>
               )}
             </select>
 
@@ -79,14 +86,15 @@ function App() {
               id="model_drop_down"
               className="border rounded p-2 w-full sm:col-span-2"
             >
-              {data_val.name.length > 0 ? (
-                data_val.name.map((name, index) => (
+              <option value="">Select a model</option>
+              {list_model_name.length > 0 ? (
+                list_model_name.map((name, index) => (
                   <option key={index} value={name}>
                     {name}
                   </option>
                 ))
               ) : (
-                <option value={""}>No model</option>
+                <option value="">No model</option>
               )}
             </select>
 
@@ -98,6 +106,7 @@ function App() {
               id="year_drop_down"
               className="border rounded p-2 w-full sm:col-span-2"
             >
+              <option value="">Select a year</option>
               {data_val.year.length > 0 ? (
                 data_val.year.map((year, index) => (
                   <option key={index} value={year}>
@@ -105,7 +114,7 @@ function App() {
                   </option>
                 ))
               ) : (
-                <option value={""}>No year</option>
+                <option value="">No year</option>
               )}
             </select>
 
@@ -117,6 +126,7 @@ function App() {
               id="fuel_type_drop_down"
               className="border rounded p-2 w-full sm:col-span-2"
             >
+              <option value="">Select fuel type</option>
               {data_val.fuel_type.length > 0 ? (
                 data_val.fuel_type.map((fuel_type, index) => (
                   <option key={index} value={fuel_type}>
@@ -124,7 +134,7 @@ function App() {
                   </option>
                 ))
               ) : (
-                <option value={""}>No fuel type</option>
+                <option value="">No fuel type</option>
               )}
             </select>
 
@@ -141,7 +151,6 @@ function App() {
         </div>
       </div>
     </>
-
   );
 }
 
