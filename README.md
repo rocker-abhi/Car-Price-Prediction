@@ -70,6 +70,18 @@ npm run dev
 http://localhost:5173/
 ```
 
+<h2>💻 Built with</h2>
+
+Technologies used in the project:
+
+*   HTML
+*   CSS
+*   TAILWIND
+*   REACT
+*   PYTHON
+*   FLASK
+
+  
 <h2>🧐 Screen Shots </h2>
 
 <img src="Screen Shot/ss_1.png" alt="Screenshot" />
