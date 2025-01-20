@@ -10,11 +10,22 @@ import pickle
 
 
 car_prediction_page_blueprint = Blueprint('home', __name__) # <-- initialising the blue print for views 
-cars_data = pd.read_csv('./Application_Database/clean_data.csv') # <-- Loading the entire dataset into the dataframe .
+# cars_data = pd.read_csv('./Application_Database/clean_data.csv') # <-- Loading the entire dataset into the dataframe .
 
-with open('./Application_Database/LinearRegressionModel.pkl', 'rb') as file: # <-- load pickle file in read binary mode
+# with open('./Application_Database/LinearRegressionModel.pkl', 'rb') as file: # <-- load pickle file in read binary mode
+#     lr_model = pickle.load(file) # create the model using pickle file
+
+# Get the current script's directory
+current_directory = os.path.dirname(os.path.abspath(__file__))
+
+# Define the relative path
+relative_path = os.path.join(current_directory, "../Application_Database/clean_data.csv") # <-- relative path .csv
+cars_data = pd.read_csv(relative_path) # <-- Loading the entire dataset into the dataframe .
+
+relative_path = os.path.join(current_directory, '../Application_Database/LinearRegressionModel.pkl') # <-- relative path .pkl
+
+with open(relative_path, 'rb') as file: # <-- load pickle file in read binary mode
     lr_model = pickle.load(file) # create the model using pickle file
-
 
 @car_prediction_page_blueprint.route("/", methods=['GET', 'POST']) # <-- decorator 
 def home():
