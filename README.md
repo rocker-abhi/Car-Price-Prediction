@@ -74,12 +74,12 @@ http://localhost:5173/
 
 Technologies used in the project:
 
-*   HTML
-*   CSS
 *   TAILWIND
 *   REACT
-*   PYTHON
 *   FLASK
+*   PANDAS
+*   SCKIT-LEARN
+*   PICKLE
 
   
 <h2>🧐 Screen Shots </h2>
