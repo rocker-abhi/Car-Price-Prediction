@@ -63,7 +63,6 @@ npm run dev
 ```
 http://localhost:5173/
 ```
-<img src="Screen Shot/ss_1.png" alt="Screenshot" />
 
 <h2>🧐 Screen Shots </h2>
 
