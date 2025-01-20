@@ -58,10 +58,14 @@ cd front-end
 npm run dev
 ```
 
-<img src="Screen Shot/ss_1.png" alt="Screenshot" />
-
 <p>8. to open the website open browser and enter url .</p>
 
 ```
 http://localhost:5173/
 ```
+<img src="Screen Shot/ss_1.png" alt="Screenshot" />
+
+<h2>🧐 Screen Shots </h2>
+
+<img src="Screen Shot/ss_1.png" alt="Screenshot" />
+<img src="Screen Shot/ss_2.png" alt="Screenshot" />
