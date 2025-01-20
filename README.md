@@ -58,6 +58,8 @@ cd front-end
 npm run dev
 ```
 
+<img src="Screen Shot/ss_1.jpg" alt="Screenshot" />
+
 <p>8. to open the website open browser and enter url .</p>
 
 ```
