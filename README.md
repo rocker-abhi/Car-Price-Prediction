@@ -1,6 +1,6 @@
 <h1 align="center" id="title">Car-Price-Prediction-ML</h1>
 
-<p id="description">Developed a complete end-to-end Car Price Prediction website leveraging React Flask and Jupyter Notebook. The project includes a robust machine learning model trained to predict car prices based on various features like mileage brand model and year. The model was built and fine-tuned in Jupyter Notebook and serialized using Pickle for seamless integration. The backend developed with Flask handles API calls and serves the prediction functionality while the React-based frontend ensures a dynamic and user-friendly interface. This solution offers real-time predictions enabling users to estimate car prices effortlessly providing valuable insights for buyers and sellers alike.</p>
+<p id="description">Developed a complete end-to-end Car Price Prediction website leveraging React Flask and Jupyter Notebook. The project includes a robust machine learning model trained to predict car prices based on various features like fuel_type, year,  brand, model and year. The model was built and fine-tuned in Jupyter Notebook and serialized using Pickle for seamless integration. The backend developed with Flask handles API calls and serves the prediction functionality while the React-based frontend ensures a dynamic and user-friendly interface. This solution offers real-time predictions enabling users to estimate car prices effortlessly providing valuable insights for buyers and sellers alike.</p>
 
   
   
