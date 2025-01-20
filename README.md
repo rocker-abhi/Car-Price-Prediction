@@ -16,49 +16,55 @@ Here're some of the project's best features:
 
 <h2>🛠️ Installation Steps:</h2>
 
-<p>1. open terminal in visual studio code and enter the git command .</p>
+<p>1. open terminal in visual studio code and enter the git command to make the copy of project .</p>
 
 ```
 git clone https://github.com/rocker-abhi/Car-Price-Prediction-ML.git
 ```
 
-<p>2. change directory using the command</p>
+<p>2. Install required libraries using requirement.txt </p>
+
+```
+pip install -r requirements.txt
+```
+
+<p>3. change directory using the command</p>
 
 ```
 cd Car-Price-Prediction-ML
 ```
 
-<p>3. change directory to backend .</p>
+<p>4. change directory to backend .</p>
 
 ```
 cd backend-code
 ```
 
-<p>4. To run backed write execute command .</p>
+<p>5. To run backed write execute command .</p>
 
 ```
 python main.py
 ```
 
-<p>5. open new terminal using the key combination .</p>
+<p>6. open new terminal using the key combination .</p>
 
 ```
 'shift' + '~'
 ```
 
-<p>6. now go to front-end directory using command . .</p>
+<p>7. now go to front-end directory using command . .</p>
 
 ```
 cd front-end
 ```
 
-<p>7. to run react front end execute command .</p>
+<p>8. to run react front end execute command .</p>
 
 ```
 npm run dev
 ```
 
-<p>8. to open the website open browser and enter url .</p>
+<p>9. to open the website open browser and enter url .</p>
 
 ```
 http://localhost:5173/
